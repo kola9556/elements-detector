@@ -9,8 +9,10 @@ fetch('./data.json')
 
 const loadBigDog = () => {
   //Delete rectangles
-  document.getElementById('container').removeChild(document.getElementById('newEye'));
-  document.getElementById('container').removeChild(document.getElementById('newNose'));
+  if (document.getElementById('newEye') || document.getElementById('newNose')) {
+    document.getElementById('container').removeChild(document.getElementById('newEye'));
+    document.getElementById('container').removeChild(document.getElementById('newNose'));
+  }
 
   // imageToLoad is a place where image will be inject to html ( id="displayed-image")
   let imageToLoad = document.getElementById('displayed-image');
@@ -26,8 +28,11 @@ const loadBigDog = () => {
 
 //The same as with loadBigDog
 const loadSmallDog = () => {
-  document.getElementById('container').removeChild(document.getElementById('newEye'));
-  document.getElementById('container').removeChild(document.getElementById('newNose'));
+  if (document.getElementById('newEye') || document.getElementById('newNose')) {
+    document.getElementById('container').removeChild(document.getElementById('newEye'));
+    document.getElementById('container').removeChild(document.getElementById('newNose'));
+  }
+
   let imageToLoad = document.getElementById('displayed-image');
   data.images.map((img) => {
     if (img.name === 'cockerSmall') {
