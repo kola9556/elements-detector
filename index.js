@@ -1,5 +1,3 @@
-const { ConsoleWriter } = require('istanbul-lib-report');
-
 let data;
 
 fetch('./data.json')
@@ -7,10 +5,14 @@ fetch('./data.json')
   .then((obj) => {
     data = obj;
   });
+
 console.log(data);
 
 const loadImage = () => {
   let imageToLoad = document.getElementById('displayed-image');
-  imageToLoad.src =
-    'https://previews.123rf.com/images/pfotenweltfoto/pfotenweltfoto1712/pfotenweltfoto171200154/92576217-black-cocker-spaniel-is-lying-in-the-park.jpg';
+  imageToLoad.src = data.images.map((img) => {
+    if (img.name === 'cocker') {
+      return img.src;
+    }
+  });
 };
