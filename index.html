@@ -3,7 +3,7 @@
     <head>
         <title>JavaScript for Waldek</title>
         <style>
-                .container {
+                #container {
                     border: 2px grey solid;
                     width: 60vw;
                     display: inline-block
@@ -17,9 +17,12 @@
         </style>
     </head>
     <body>
-        <div class="container"><img id="displayed-image" src="https://previews.123rf.com/images/sandrie/sandrie2004/sandrie200400044/144943242-a-black-english-cocker-spaniel-puppy.jpg"/></div>
+        <div id="container"><img id="displayed-image" src="https://previews.123rf.com/images/sandrie/sandrie2004/sandrie200400044/144943242-a-black-english-cocker-spaniel-puppy.jpg"/></div>
 
-        <button onclick="loadImage()">load image</button>
+        <button onclick="loadBigDog()">load big dog</button>
+        <button onclick="loadSmallDog()">load small dog</button>
+        <button onclick="findNose()">find nose</button>
+        <button onclick="findEye()">find eye</button>
 
     <script  src="index.js">
         
