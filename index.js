@@ -1,6 +1,13 @@
+const { ConsoleWriter } = require('istanbul-lib-report');
+
+let data;
+
 fetch('./data.json')
   .then((response) => response.json())
-  .then((obj) => console.log(obj));
+  .then((obj) => {
+    data = obj;
+  });
+console.log(data);
 
 const loadImage = () => {
   let imageToLoad = document.getElementById('displayed-image');
